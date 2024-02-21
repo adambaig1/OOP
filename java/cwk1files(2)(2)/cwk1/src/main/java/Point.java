@@ -6,7 +6,7 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toRadians;
-
+import java.time.ZonedDateTime;
 
 /**
  * Represents a point in space and time, recorded by a GPS sensor.
@@ -23,16 +23,34 @@ public class Point {
   private static final double MEAN_EARTH_RADIUS = 6.371009e+6;
 
   // TODO: Create a stub for the constructor
+  Point() {
+
+  }
 
   // TODO: Create a stub for getTime()
+  ZonedDateTime getTime() {
+    return null;
+  }
 
   // TODO: Create a stub for getLatitude()
+  double getLatitude() {
+    return 0;
+  }
 
   // TODO: Create a stub for getLongitude()
+  double getLongitude() {
+    return 0;
+  }
 
   // TODO: Create a stub for getElevation()
+  double getElevation() {
+    return 0;
+  }
 
   // TODO: Create a stub for toString()
+  String tosString() {
+    return null;
+  }
 
   // IMPORTANT: Do not alter anything beneath this comment!
 
@@ -52,11 +70,11 @@ public class Point {
     double lambda2 = toRadians(q.getLongitude());
     double delta = abs(lambda1 - lambda2);
 
-    double firstTerm = cos(phi2)*sin(delta);
-    double secondTerm = cos(phi1)*sin(phi2) - sin(phi1)*cos(phi2)*cos(delta);
-    double top = sqrt(firstTerm*firstTerm + secondTerm*secondTerm);
+    double firstTerm = cos(phi2) * sin(delta);
+    double secondTerm = cos(phi1) * sin(phi2) - sin(phi1) * cos(phi2) * cos(delta);
+    double top = sqrt(firstTerm * firstTerm + secondTerm * secondTerm);
 
-    double bottom = sin(phi1)*sin(phi2) + cos(phi1)*cos(phi2)*cos(delta);
+    double bottom = sin(phi1) * sin(phi2) + cos(phi1) * cos(phi2) * cos(delta);
 
     return MEAN_EARTH_RADIUS * atan2(top, bottom);
   }
