@@ -11,9 +11,8 @@ public class BaccaratHand {
         return hand.size();
     }
 
-    public void add(Card card) {
-        BaccaratCard c = new BaccaratCard(card.getRank(), card.getSuit());
-        hand.add(c);
+    public void add(BaccaratCard card) {
+        hand.add(card);
     }
 
     public int value() {
