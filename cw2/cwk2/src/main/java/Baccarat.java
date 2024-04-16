@@ -18,6 +18,7 @@ public class Baccarat {
             while (finish) {
 
                 if (shoe.size() < 6){
+                    System.out.println("shoe has below 6 cards in it. game over");
                     finish = false;
                     break;
                 }
@@ -36,6 +37,13 @@ public class Baccarat {
                     else{
                         BaccaratCard p = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                         pHand.add(p);
+                    }
+
+                    if (shoe.size() == 0){
+                        finish = false;
+                        break;
+                    }
+                    else{
                         BaccaratCard b = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                         bHand.add(b);
                     }
@@ -83,7 +91,7 @@ public class Baccarat {
             scanner.close();
 
             System.out.println("");
-            System.out.printf("%d rounds played\n", roundc);
+            System.out.printf("%d rounds played\n", roundc-1);
             System.out.printf("%d player wins\n", pwin);
             System.out.printf("%d banker wins\n", bwin);
             System.out.printf("%d ties\n", tie);
@@ -145,56 +153,58 @@ public class Baccarat {
                 System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value()); 
                 dealt = true;
             }
-
-            switch (bHand.value()) {
-                case 3:
-                    if(p.value() != 8){
-                        System.out.println("Dealing third card to banker ...");
-                        BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-                        bHand.add(q);
-                        System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());  
-                        dealt = true;                       
-                    }
-                    break;
-                case 4:
-                    if (1<p.value() && p.value()<8){
-                        System.out.println("Dealing third card to banker ...");
-                        BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-                        bHand.add(q);
-                        System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
-                        dealt = true;                         
-                    }
-                    break;
-                case 5:
-                    if (3<p.value() && p.value()<8){
-                        System.out.println("Dealing third card to banker ...");
-                        BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-                        bHand.add(q);
-                        System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
-                        dealt = true;                          
-                    }
-                    break;
-                case 6:
-                    if (p.value() == 6 || p.value() == 7){
-                        System.out.println("Dealing third card to banker ...");
-                        BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-                        bHand.add(q);
-                        System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
-                        dealt = true;                            
-                    }
-                    break;
-                case 7:
-                    break;          
-                default:
-                    break;
-            }
+            else {
+                switch (bHand.value()) {
+                    case 3:
+                        if(p.value() != 8){
+                            System.out.println("Dealing third card to banker ...");
+                            BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                            bHand.add(q);
+                            System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
+                            System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());  
+                            dealt = true;                       
+                        }
+                        break;
+                    case 4:
+                        if (1<p.value() && p.value()<8){
+                            System.out.println("Dealing third card to banker ...");
+                            BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                            bHand.add(q);
+                            System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
+                            System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+                            dealt = true;                         
+                        }
+                        break;
+                    case 5:
+                        if (3<p.value() && p.value()<8){
+                            System.out.println("Dealing third card to banker ...");
+                            BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                            bHand.add(q);
+                            System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
+                            System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+                            dealt = true;                          
+                        }
+                        break;
+                    case 6:
+                        if (p.value() == 6 || p.value() == 7){
+                            System.out.println("Dealing third card to banker ...");
+                            BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                            bHand.add(q);
+                            System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
+                            System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+                            dealt = true;                            
+                        }
+                        break;
+                    case 7:
+                        break;          
+                    default:
+                        break;
+                    }    
+                }   
+            
 
         } else if (bHand.value() < 6){
-            if (dealt = false){
+            if (dealt == false){
                 System.out.println("Dealing third card to banker ...");
                 BaccaratCard b = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                 bHand.add(b);

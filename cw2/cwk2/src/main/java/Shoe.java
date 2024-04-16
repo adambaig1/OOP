@@ -34,7 +34,8 @@ public class Shoe{
             throw new CardException("error: shoe is empty");
         }
 
-        Card c = new Card(cards.remove(0).getRank(), cards.remove(0).getSuit());
+        BaccaratCard removedCard = cards.remove(0);
+        Card c = new Card(removedCard.getRank(), removedCard.getSuit());
         return c;
     }
 

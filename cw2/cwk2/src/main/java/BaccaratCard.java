@@ -1,23 +1,23 @@
 public class BaccaratCard {
-    private Card.Rank r;
-    private Card.Suit s;
+    private Card.Rank rank;
+    private Card.Suit suit;
     
     public BaccaratCard(Card.Rank r, Card.Suit s) {
-        this.r = r;
-        this.s = s;
+        this.rank = r;
+        this.suit = s;
     }
 
     public Card.Rank getRank() {
-        return r;
+        return this.rank;
     }
 
     public Card.Suit getSuit() {
-        return s;
+        return this.suit;
     }
 
     @Override
     public String toString() {
-        return String.format("%c%c", r.getSymbol(), s.getSymbol());
+        return String.format("%c%c", this.rank.getSymbol(), this.suit.getSymbol());
     }
 
     @Override
@@ -29,21 +29,21 @@ public class BaccaratCard {
             return false;
         }
         BaccaratCard otherCard = (BaccaratCard) other;
-        return r == otherCard.getRank() && s == otherCard.getSuit();
+        return rank == otherCard.getRank() && suit == otherCard.getSuit();
     }
 
 
     public int compareTo(BaccaratCard other) {
-        int suitComparison = s.compareTo(other.getSuit());
+        int suitComparison = suit.compareTo(other.getSuit());
         if (suitComparison != 0) {
             return suitComparison;
         }
-        return r.compareTo(other.getRank());
+        return rank.compareTo(other.getRank());
     }   
 
     public int value() {
-        int value = r.ordinal() + 1;
-        if (value > 10) {
+        int value = this.rank.ordinal() + 1;
+        if (value > 9) {
             return 0;
         }
         return value;

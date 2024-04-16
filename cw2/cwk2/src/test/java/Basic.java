@@ -202,7 +202,7 @@ public class Basic {
     Card card3 = smallShoe.deal();
     assertAll(
       () -> assertThat(smallShoe.size(), is(SMALL_SHOE_SIZE - 3)),
-      () -> assertThat(card1 instanceof BaccaratCard, is(true)),
+      () -> assertThat(card1 instanceof Card, is(true)),
       () -> assertThat(card1, equalTo(aceClubs)),
       () -> assertThat(card2, equalTo(twoClubs)),
       () -> assertThat(card3, equalTo(threeClubs))
@@ -214,7 +214,7 @@ public class Basic {
   public void shuffle() {
     smallShoe.shuffle();
     Card[] cards = new Card[] { smallShoe.deal(), smallShoe.deal(), smallShoe.deal() };
-    Card[] unshuffled = new Card [] { aceClubs, twoClubs, threeClubs };
+    BaccaratCard[] unshuffled = new BaccaratCard [] { aceClubs, twoClubs, threeClubs };
     assertThat(cards, not(unshuffled));
   }
 

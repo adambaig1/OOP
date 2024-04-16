@@ -34,11 +34,17 @@ public class BaccaratHand {
 
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder();
-        for (BaccaratCard card : hand) {
-            s.append(" ").append(card.toString()); 
+        if (hand.size() == 0){
+            return "";
         }
-        return s.toString();
+        else {
+            StringBuilder s = new StringBuilder();
+            for (BaccaratCard card : hand) {
+                s.append(card.toString()).append(" "); 
+            }
+            s.deleteCharAt(s.length()-1);
+            return s.toString();
+        }
     }
 
 }
