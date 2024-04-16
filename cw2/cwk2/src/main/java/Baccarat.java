@@ -17,7 +17,7 @@ public class Baccarat {
 
             while (finish) {
 
-                if (shoe.size()< 6){
+                if (shoe.size() < 6){
                     finish = false;
                     break;
                 }
@@ -29,10 +29,16 @@ public class Baccarat {
                 System.out.printf("Round %d\n", roundc);
 
                 for (int i = 0; i < 2; i++) {
-                    BaccaratCard p = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-                    pHand.add(p);
-                    BaccaratCard b = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-                    bHand.add(b);
+                    if (shoe.size() == 0){
+                        finish = false;
+                        break;
+                    }
+                    else{
+                        BaccaratCard p = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                        pHand.add(p);
+                        BaccaratCard b = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                        bHand.add(b);
+                    }
                 }
 
                 System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
@@ -54,6 +60,7 @@ public class Baccarat {
                         tie++;
                         break;
                     case 100:
+                        finish = false;
                         break;
                 }
 
@@ -107,8 +114,8 @@ public class Baccarat {
 
     public static int cardProcessing(BaccaratHand pHand, BaccaratHand bHand, Shoe shoe) {
 
+        Boolean dealt = false;
         if (shoe.size()<3){
-            System.out.println("Shoe is empty.\n");
             return 100;
         }
         
@@ -136,6 +143,7 @@ public class Baccarat {
                 bHand.add(b);
                 System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
                 System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value()); 
+                dealt = true;
             }
 
             switch (bHand.value()) {
@@ -145,7 +153,8 @@ public class Baccarat {
                         BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                         bHand.add(q);
                         System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());                         
+                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());  
+                        dealt = true;                       
                     }
                     break;
                 case 4:
@@ -154,7 +163,8 @@ public class Baccarat {
                         BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                         bHand.add(q);
                         System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());                         
+                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+                        dealt = true;                         
                     }
                     break;
                 case 5:
@@ -163,7 +173,8 @@ public class Baccarat {
                         BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                         bHand.add(q);
                         System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());                          
+                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+                        dealt = true;                          
                     }
                     break;
                 case 6:
@@ -172,7 +183,8 @@ public class Baccarat {
                         BaccaratCard q = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
                         bHand.add(q);
                         System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());                            
+                        System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+                        dealt = true;                            
                     }
                     break;
                 case 7:
@@ -182,13 +194,14 @@ public class Baccarat {
             }
 
         } else if (bHand.value() < 6){
-            System.out.println("Dealing third card to banker ...");
-            BaccaratCard b = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
-            bHand.add(b);
-            System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
-            System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+            if (dealt = false){
+                System.out.println("Dealing third card to banker ...");
+                BaccaratCard b = new BaccaratCard(shoe.deal().getRank(), shoe.deal().getSuit());
+                bHand.add(b);
+                System.out.printf("Player: %s = %d\n", pHand.toString(), pHand.value());
+                System.out.printf("Banker: %s = %d\n", bHand.toString(), bHand.value());
+            }
         }
-        else{}
         
         int pcomp = pHand.value() - 9;
         int bcomp = bHand.value() - 9;
@@ -204,4 +217,5 @@ public class Baccarat {
 
 
     }
+
 }
