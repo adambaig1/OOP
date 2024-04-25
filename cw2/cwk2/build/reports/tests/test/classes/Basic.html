@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.144s</div>
+<div class="counter">0.105s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">93%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,155 +61,10 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
-</li>
-<li>
-<a href="#tab1">Tests</a>
+<a href="#tab0">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="dealFromShoe()"></a>
-<h3 class="failures">Cards dealt correctly from unshuffled Shoe</h3>
-<span class="code">
-<pre>org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (3 failures)
-	java.lang.AssertionError: 
-Expected: &lt;A♣&gt;
-     but: was &lt;A♣&gt;
-	java.lang.AssertionError: 
-Expected: &lt;2♣&gt;
-     but: was &lt;2♣&gt;
-	java.lang.AssertionError: 
-Expected: &lt;3♣&gt;
-     but: was &lt;3♣&gt;
-	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)
-	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
-	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
-	at app//org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
-	at app//Basic.dealFromShoe(Basic.java:203)
-	at java.base@11.0.14.1/java.lang.reflect.Method.invoke(Method.java:566)
-	at java.base@11.0.14.1/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base@11.0.14.1/java.util.ArrayList.forEach(ArrayList.java:1541)
-	Suppressed: java.lang.AssertionError: 
-Expected: &lt;A♣&gt;
-     but: was &lt;A♣&gt;
-		at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-		at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-		at Basic.lambda$dealFromShoe$46(Basic.java:206)
-		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
-		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
-		... 7 more
-	Suppressed: java.lang.AssertionError: 
-Expected: &lt;2♣&gt;
-     but: was &lt;2♣&gt;
-		at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-		at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-		at Basic.lambda$dealFromShoe$47(Basic.java:207)
-		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
-		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
-		... 7 more
-	Suppressed: java.lang.AssertionError: 
-Expected: &lt;3♣&gt;
-     but: was &lt;3♣&gt;
-		at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-		at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-		at Basic.lambda$dealFromShoe$48(Basic.java:208)
-		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
-		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
-		... 7 more
-Cause 1: java.lang.AssertionError: 
-Expected: &lt;A♣&gt;
-     but: was &lt;A♣&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at Basic.lambda$dealFromShoe$46(Basic.java:206)
-	at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
-	at org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
-	at Basic.dealFromShoe(Basic.java:203)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-Cause 2: java.lang.AssertionError: 
-Expected: &lt;2♣&gt;
-     but: was &lt;2♣&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at Basic.lambda$dealFromShoe$47(Basic.java:207)
-	at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
-	at org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
-	at Basic.dealFromShoe(Basic.java:203)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-Cause 3: java.lang.AssertionError: 
-Expected: &lt;3♣&gt;
-     but: was &lt;3♣&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at Basic.lambda$dealFromShoe$48(Basic.java:208)
-	at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
-	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
-	at org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
-	at Basic.dealFromShoe(Basic.java:203)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -223,91 +78,91 @@ Expected: &lt;3♣&gt;
 <tr>
 <td class="success">Cards added to hand correctly</td>
 <td class="success">addingCardsToHand()</td>
-<td class="success">0.004s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratCard objects can be compared &amp; ordered</td>
 <td class="success">cardComparison()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratCard objects are created properly</td>
 <td class="success">cardCreation()</td>
-<td class="success">0.029s</td>
+<td class="success">0.054s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratCard objects can be tested for equality</td>
 <td class="success">cardEquality()</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratCard has the correct string representation</td>
 <td class="success">cardStringRepresentation()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratCard values are computed correctly</td>
 <td class="success">cardValue()</td>
-<td class="success">0.002s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">CardException when dealing from empty shoe</td>
 <td class="success">dealFromEmptyShoeException()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Cards dealt correctly from unshuffled Shoe</td>
-<td class="failures">dealFromShoe()</td>
-<td class="failures">0.032s</td>
-<td class="failures">failed</td>
+<td class="success">Cards dealt correctly from unshuffled Shoe</td>
+<td class="success">dealFromShoe()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Empty hand created correctly</td>
 <td class="success">emptyHandCreation()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratHand has the correct string representation</td>
 <td class="success">handStringRepresentation()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">BaccaratHand values computed correctly</td>
 <td class="success">handValue()</td>
-<td class="success">0.002s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Correct detection of whether a BaccaratHand is a 'natural'</td>
 <td class="success">naturalHand()</td>
-<td class="success">0.029s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Shoes are created with the correct numbers of cards</td>
 <td class="success">shoeCreation()</td>
-<td class="success">0.006s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">CardException when creating a Shoe with wrong number of decks</td>
 <td class="success">shoeCreationException()</td>
-<td class="success">0.014s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Shoe can be shuffled</td>
 <td class="success">shuffle()</td>
-<td class="success">0.010s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -320,7 +175,7 @@ Expected: &lt;3♣&gt;
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at Apr 24, 2024, 12:00:35 PM</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at Apr 25, 2024, 12:02:53 PM</p>
 </div>
 </div>
 </body>
